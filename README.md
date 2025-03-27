@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Secure Blog App
 
-## Getting Started
+A secure blogging platform with advanced security features, payment integration, and containerized deployment.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### **Security & Authentication**
+- **Email Protection:**
+  - Blocks disposable emails, domains without MX records, and invalid addresses.
+- **Rate Limiting & Bot Protection:**
+  - Implements rate limiting to prevent abuse and brute force attacks.
+  - Uses CAPTCHA for enhanced bot protection.
+- **User Authentication:**
+  - Secure login/logout with JWT-based authentication.
+  - Password hashing and salting with bcrypt.
+- **Access Control:**
+  - Role-based access control (RBAC) for different user roles (admin, editor, reader).
+
+### **Blogging Features**
+- **Rich Text Editor:**
+  - Supports Markdown and WYSIWYG editing.
+- **Content Management:**
+  - Create, edit, and delete blog posts.
+  - Draft and publish functionality.
+- **SEO & Social Sharing:**
+  - Optimized metadata for search engines.
+  - Social media sharing options.
+
+### **Payment Integration**
+- **Monetization Features:**
+  - Supports PayPal payment gateway for premium content subscriptions.
+  - Integration with Stripe for secure payments.
+
+### **Deployment & Scalability**
+- **Containerized Deployment:**
+  - Uses Docker for easy deployment and scalability.
+  - Compatible with Kubernetes for orchestration.
+- **Database & Storage:**
+  - Uses MongoDB as the primary database.
+  - Cloud storage integration for media files.
+
+### **Tech Stack**
+- **Frontend:** Next.js (React)
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT, bcrypt
+- **Payment Gateway:** PayPal, Stripe
+- **Deployment:** Docker, Kubernetes
+
+## Installation
+
+### **Prerequisites**
+Make sure you have the following installed:
+- Node.js (v16+)
+- MongoDB (local or cloud)
+- Docker (if using containerized deployment)
+- Git
+
+### **Clone the Repository**
+```sh
+git clone https://github.com/akashgupta2233/secure-blog-app.git
+cd secure-blog-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Install Dependencies**
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### **Set Up Environment Variables**
+Create a `.env` file in the root directory and configure the required environment variables:
+```env
+MONGO_URI=<your-mongodb-uri>
+JWT_SECRET=<your-secret-key>
+PAYPAL_CLIENT_ID=<your-paypal-client-id>
+PAYPAL_SECRET=<your-paypal-secret>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Run the Development Server**
+```sh
+npm run dev
+```
 
-## Learn More
+### **Docker Deployment**
+#### **Build the Docker Image**
+```sh
+docker build -t secure-blog-app .
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### **Run the Docker Container**
+```sh
+docker run -p 3000:3000 secure-blog-app
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Access the Application**
+Once the server is running, open your browser and navigate to:
+```
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+🚀 **Enjoy blogging with enhanced security!**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
