@@ -31,13 +31,17 @@ A secure blogging platform with advanced security features, payment integration,
   - Supports PayPal payment gateway for premium content subscriptions.
   - Integration with Stripe for secure payments.
 
-### **Deployment & Scalability**
-- **Containerized Deployment:**
-  - Uses Docker for easy deployment and scalability.
-  - Compatible with Kubernetes for orchestration.
-- **Database & Storage:**
-  - Uses MongoDB as the primary database.
-  - Cloud storage integration for media files.
+### Deployment & Scalability
+
+- Dockerized containers for frontend and backend  
+- Kubernetes-ready deployment structure  
+- **Cloud Infrastructure (AWS)**  
+  - Virtual Private Cloud (VPC)  
+  - Public and Private subnets  
+  - Internet Gateway and route tables  
+  - Terraform scripts included for reproducible networking
+- MongoDB  
+- Cloud storage integration for media files
 
 ### **Tech Stack**
 - **Frontend:** Next.js (React)
